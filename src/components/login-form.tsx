@@ -48,7 +48,7 @@ export function LoginForm({
                 <Input
                   id="username"
                   type="text"
-                  placeholder="Usuario / <traduccion aimara>"
+                  placeholder="Usuario / q'aspi ñaupa>"
                   value={username}
                   onChange={e => setUsername(e.target.value)}
                   required
@@ -59,7 +59,7 @@ export function LoginForm({
                 <Input
                   id="password"
                   type="password"
-                  placeholder="Contraseña / <traduccion aimara>"
+                  placeholder="Contraseña / kliwa"
                   value={password}
                   onChange={e => setPassword(e.target.value)}
                   required

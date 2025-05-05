@@ -75,13 +75,18 @@ export default function Login() {
           </div>
         </div>
       </div>
-      <div className="relative hidden bg-muted lg:block">
-        <img
-          src="/placeholder.svg"
-          alt="Image"
-          className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-        />
-      </div>
+      <div className="hidden lg:flex items-center justify-center p-10 bg-gradient-to-br from-muted to-muted/70 overflow-hidden">
+  <img
+    src="/logo_color.png"
+    alt="Logo"
+    className="max-w-[300px] w-full h-auto object-contain drop-shadow-md transition-transform duration-700 ease-out hover:scale-105 animate-fade-in"
+  />
+</div>
+
+
+
+
+
     </div>
   )
 }
