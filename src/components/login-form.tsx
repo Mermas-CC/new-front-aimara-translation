@@ -13,7 +13,7 @@ import React, { useState } from 'react'
 
 interface LoginFormProps {
   className?: string
-  onSubmit: (username: string, password: string) => void
+  onSubmit: (email: string, password: string) => void
   loading?: boolean
 }
 
@@ -23,12 +23,12 @@ export function LoginForm({
   onSubmit,
   ...props
 }: LoginFormProps) {
-  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    onSubmit(username, password)
+    onSubmit(email, password)
   }
 
   return (
@@ -44,13 +44,13 @@ export function LoginForm({
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-3">
-                <Label htmlFor="username">Usuario</Label>
+                <Label htmlFor="email">Correo electrónico</Label>
                 <Input
-                  id="username"
-                  type="text"
-                  placeholder="Usuario / q'aspi ñaupa>"
-                  value={username}
-                  onChange={e => setUsername(e.target.value)}
+                  id="email"
+                  type="email"
+                  placeholder="correo@ejemplo.com"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                   required
                 />
               </div>

@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import axios from "axios"
-import { ChevronLeft, Mic, MicOff } from "lucide-react"
+import { Mic, MicOff } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "@/context/AuthContext"
@@ -258,14 +258,6 @@ export default function ValidarPalabra() {
           <Card className="max-w-lg w-full">
             <CardHeader className="pb-2">
               <div className="flex items-center gap-2">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full h-8 w-8"
-                  onClick={() => navigate(user && user.rol === "admin" ? "/menu" : "/menu-validador")}
-                >
-                  <ChevronLeft className="h-4 w-4" />
-                </Button>
                 <CardTitle>Validar palabra</CardTitle>
               </div>
             </CardHeader>
@@ -303,11 +295,11 @@ export default function ValidarPalabra() {
               </div>
 
               <div className="space-y-2">
-                <div className="text-sm text-muted-foreground">Traducción o comentario</div>
+                <div className="text-sm text-muted-foreground">Traducción </div>
                 <Textarea
                   value={comentario}
                   onChange={(e) => setComentario(e.target.value)}
-                  placeholder="Ingrese la traducción en Aymara o un comentario"
+                  placeholder="Ingrese la traducción en Aymara"
                   className="resize-none min-h-[100px]"
                 />
               </div>

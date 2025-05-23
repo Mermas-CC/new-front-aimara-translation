@@ -15,13 +15,13 @@ export default function Login() {
   const { Loading, handleLoading } = useLoading()
   const navigate = useNavigate()
 
-  const handleLogin = async (username: string, password: string) => {
+  const handleLogin = async (email: string, password: string) => {
     setMessage('') // Limpiar mensajes previos
     handleLoading(true)
     try {
       const response = await axios.post(`${API_URL}/login`, {
-        username,
-        password,
+        email,
+        contraseña: password,
       })
 
       if (response.data.success) {
@@ -62,8 +62,8 @@ export default function Login() {
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-sm">
             <LoginForm
-              onSubmit={(username: string, password: string) =>
-                handleLogin(username, password)
+              onSubmit={(email: string, password: string) =>
+                handleLogin(email, password)
               }
               loading={Loading}
             />
